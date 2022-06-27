@@ -1,0 +1,12 @@
+tags:
+  - User
+summary: Delete user
+description: This can only be done by the logged in user.
+operationId: deleteUser
+parameters:
+  - $ref: ../../components/parameters/pathUserName.yml
+responses:
+  400:
+    description: Invalid username supplied
+  404:
+    description: User not found

@@ -1,0 +1,14 @@
+tags:
+  - user
+summary: Get all  user
+description: get all users from the server.
+operationId: getUsers
+responses:
+  200:
+    description: successful operation
+    content:
+      application/json:
+        schema:
+          $ref: ../../components/schemas/user.yml
+  400:
+    description: No users found

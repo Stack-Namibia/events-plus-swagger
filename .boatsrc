@@ -1,0 +1,25 @@
+{
+    "nunjucksOptions": {
+        "tags": {
+            "blockStart": "[$",
+            "blockEnd": "$]",
+            "variableStart": "<$",
+            "variableEnd": "$>",
+            "commentStart": "[#",
+            "commentEnd": "#]"
+        }
+    },
+    "jsonSchemaRefParserBundleOpts": {},
+    "picomatchOptions": {
+        "bash": true
+    },
+    "permissionConfig": {
+        "globalPrefix": true
+    },
+    "paths": {
+        "@mixins/": "src/mixins/",
+        "@parameters/": "src/components/parameters/",
+        "@schemas/": "src/components/schemas/",
+        "@/": "./"
+    }
+}

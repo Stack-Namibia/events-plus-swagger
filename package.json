@@ -1,0 +1,20 @@
+{
+  "name": "events-plus-swagger",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "boats": "boats",
+    "buildSpec": "boats -x --yes -i ./src/index.yml -o ./build/latest.yml && boats -x --yes -i ./src/index.yml -o ./prebuild/latest.yml",
+    "buildPublic": "boats -x --yes -i ./prebuild/index.yml -o ./build/latest.json",
+    "buildFullSpec": "boats -x --yes -i ./prebuild/index.yml -o ./build/full-latest.yml",
+    "build": "npm run buildSpec && npm run buildPublic && npm run buildFullSpec"
+  },
+  "keywords": [],
+  "author": "stack technologies",
+  "dependencies": {
+    "boats": "^2.35.0"
+  },
+  "private": true
+}

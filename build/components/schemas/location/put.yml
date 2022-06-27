@@ -1,0 +1,27 @@
+allOf:
+ - type: object
+   properties:
+     name:
+       type: string
+     coordinates:
+       type: array
+       items:
+         type: string
+     description:
+       type: string
+ - type: object
+   properties:
+    id:
+      type: string
+    location:
+      allOf:
+        - type: object
+          properties:
+            name:
+              type: string
+            coordinates:
+              type: array
+              items:
+                type: string
+            description:
+              type: string

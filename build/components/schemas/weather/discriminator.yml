@@ -1,0 +1,9 @@
+type: object
+discriminator:
+    mapping:
+        typeOne: "#/components/schemas/WeatherPolymorphicmodelOne"
+        typeTwo: "#/components/schemas/WeatherPolymorphicmodelTwo"
+    propertyName: selector
+oneOf:
+- $ref: polymorphicmodel_one.yml
+- $ref: polymorphicmodel_two.yml

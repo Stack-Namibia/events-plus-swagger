@@ -1,0 +1,13 @@
+tags:
+  - Event
+description: get all events
+operationId: getEvents
+responses:
+  200:
+    description: successful operation
+    content:
+      application/json:
+        schema:
+          $ref: ../../components/schemas/event.yml
+  400:
+    description: No events found

@@ -1,0 +1,23 @@
+allOf:
+ - type: object
+   required:
+     - name
+   properties:
+     name:
+       type: string
+     description:
+       type: string
+ - type: object
+   properties:
+    id:
+      type: string
+    location:
+      allOf:
+        - type: object
+          required:
+            - name
+          properties:
+            name:
+              type: string
+            description:
+              type: string

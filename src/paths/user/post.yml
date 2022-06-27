@@ -1,0 +1,13 @@
+tags:
+  - user
+summary: Create user
+description: This can only be done by the logged in user.
+operationId: createUser
+requestBody:
+  content:
+    application/json:
+      schema:
+        $ref: ../../components/schemas/user.yml
+responses:
+  405:
+    description: Invalid input 

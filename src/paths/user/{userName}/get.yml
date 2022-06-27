@@ -1,0 +1,17 @@
+tags:
+  - User
+description: Get user by name
+operationId: getUserByName
+parameters:
+- $ref: ../../../components/parameters/pathUserName.yml
+responses:
+  200:
+    description: successful operation
+    content:
+      application/json:
+        schema:
+          $ref: ../../../components/schemas/user.yml
+  400:
+    description: Invalid username supplied
+  404:
+    description: User not found

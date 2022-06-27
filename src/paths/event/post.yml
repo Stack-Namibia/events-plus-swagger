@@ -1,0 +1,12 @@
+tags:
+  - Event
+description: add new event
+operationId: addEvent
+requestBody:
+  content:
+    application/json:
+      schema:
+        $ref: ../../components/schemas/event.yml
+responses:
+  405:
+    description: Invalid input 

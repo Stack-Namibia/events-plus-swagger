@@ -1,0 +1,44 @@
+openapi: 3.0.0
+info:
+  title: Event-Plus API
+  description: This is an events-plus server
+  contact:
+    name: Carlos sibalatani
+    email: sibalatanics@outlook.com
+  version: 3.1.0
+servers:
+  - url: "http://localhost:8080"
+    variables:
+      host:
+        default: "localhost"
+      protocol:
+        default: http
+        enum:
+          - http
+          - https
+      port:
+        default: "8080"
+  - url: http://api.eventsplus.com/v1
+paths:
+  $ref: ./paths/index.yml
+components:
+  parameters:
+    $ref: ./components/parameters/index.yml
+  schemas:
+    $ref: ./components/schemas/index.yml
+  securitySchemes:
+    jwtToken:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT
+<$
+  inject([
+    { toAllOperations: {
+      content: {
+        security: [{ jwtToken: [] }]
+      },
+      excludePaths: []
+      }
+    }
+  ])
+$>

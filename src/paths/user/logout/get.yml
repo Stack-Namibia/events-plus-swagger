@@ -1,0 +1,9 @@
+tags:
+  - user
+summary: Logs out current logged in user session
+description: delete the api token
+operationId: logoutUser
+parameters: []
+responses:
+  default:
+    description: successful operation

@@ -1,0 +1,13 @@
+type: object
+required:
+  - name
+  - coordinates
+properties:
+  name:
+    type: string
+  coordinates:
+    type: array
+    items:
+      type: string
+  description:
+    type: string
