@@ -37,7 +37,9 @@ components:
       content: {
         security: [{ jwtToken: [] }]
       },
-      excludePaths: []
+      excludePaths: [
+        '/event'
+      ]
       }
     }
   ])

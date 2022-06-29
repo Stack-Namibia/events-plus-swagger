@@ -10,5 +10,3 @@ requestBody:
 responses:
   '405':
     description: Invalid input
-security:
-  - jwtToken: []

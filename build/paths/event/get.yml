@@ -11,5 +11,3 @@ responses:
           $ref: ../../components/schemas/event.yml
   '400':
     description: No events found
-security:
-  - jwtToken: []

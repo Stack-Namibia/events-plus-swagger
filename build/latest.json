@@ -54,12 +54,7 @@
           "400": {
             "description": "No events found"
           }
-        },
-        "security": [
-          {
-            "jwtToken": []
-          }
-        ]
+        }
       },
       "post": {
         "tags": [
@@ -80,12 +75,7 @@
           "405": {
             "description": "Invalid input"
           }
-        },
-        "security": [
-          {
-            "jwtToken": []
-          }
-        ]
+        }
       }
     },
     "/event/{eventId}": {
