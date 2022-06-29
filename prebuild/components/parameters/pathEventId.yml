@@ -1,0 +1,5 @@
+in: path
+name: eventId
+required: true
+schema:
+  type: string

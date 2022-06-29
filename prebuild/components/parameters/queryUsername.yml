@@ -1,0 +1,6 @@
+  in: query
+  name: username
+  required: true
+  schema:
+    type: string
+    example: Herobiam/hherobiam@gmail.com
