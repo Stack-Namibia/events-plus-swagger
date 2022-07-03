@@ -1,0 +1,14 @@
+type: object
+properties:
+  total:
+    type: number
+  lastUpdate:
+    type: string
+    format: date-time
+  skip:
+    type: number
+  limit:
+    type: number
+  orderedBy:
+    type: string
+additionalProperties: true

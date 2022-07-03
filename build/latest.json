@@ -46,7 +46,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Event"
+                  "$ref": "#/components/schemas/EventResponse"
                 }
               }
             }
@@ -495,6 +495,23 @@
           "latitude": "47.6062095"
         }
       },
+      "EventResponse": {
+        "type": "object",
+        "required": [
+          "data"
+        ],
+        "properties": {
+          "data": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Event"
+            }
+          },
+          "meta": {
+            "$ref": "#/components/schemas/Meta"
+          }
+        }
+      },
       "EventTickets": {
         "type": "object",
         "properties": {
@@ -634,6 +651,28 @@
             }
           ]
         }
+      },
+      "Meta": {
+        "type": "object",
+        "properties": {
+          "total": {
+            "type": "number"
+          },
+          "lastUpdate": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "skip": {
+            "type": "number"
+          },
+          "limit": {
+            "type": "number"
+          },
+          "orderedBy": {
+            "type": "string"
+          }
+        },
+        "additionalProperties": true
       },
       "User": {
         "type": "object",

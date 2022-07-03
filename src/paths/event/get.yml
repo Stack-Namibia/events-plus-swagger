@@ -8,6 +8,6 @@ responses:
     content:
       application/json:
         schema:
-          $ref: ../../components/schemas/event.yml
+          $ref: ../../components/schemas/event/response.yml
   400:
     description: No events found

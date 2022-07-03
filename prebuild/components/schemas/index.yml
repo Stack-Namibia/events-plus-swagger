@@ -4,10 +4,14 @@ EventHost:
   $ref: ./event/host.yml
 EventLocation:
   $ref: ./event/location.yml
+EventResponse:
+  $ref: ./event/response.yml
 EventTickets:
   $ref: ./event/tickets.yml
 Event:
   $ref: ./event.yml
+Meta:
+  $ref: ./meta.yml
 User:
   $ref: ./user.yml
 
