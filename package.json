@@ -29,5 +29,6 @@
   "publishConfig": {
     "@stacktechnologies:registry": "https://npm.pkg.github.com",
     "access": "public"
-  }
+  },
+  "private": false
 }
