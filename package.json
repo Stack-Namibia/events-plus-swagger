@@ -16,7 +16,7 @@
   "dependencies": {
     "boats": "^2.35.0"
   },
-  "private": true,
+  "private": false,
   "devDependencies": {},
   "repository": {
     "type": "git",
