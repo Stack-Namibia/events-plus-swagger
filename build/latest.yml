@@ -116,23 +116,7 @@ paths:
           description: No users found
       security:
         - jwtToken: []
-    post:
-      tags:
-        - user
-      summary: Create user
-      description: This can only be done by the logged in user.
-      operationId: createUser
-      requestBody:
-        content:
-          application/json:
-            schema:
-              $ref: '/components/schemas/index.yml#/User'
-      responses:
-        '405':
-          description: Invalid input
-      security:
-        - jwtToken: []
-    put:
+    patch:
       tags:
         - User
       summary: Updated user
@@ -162,6 +146,22 @@ paths:
           description: Invalid user supplied
         '404':
           description: User not found
+      security:
+        - jwtToken: []
+    post:
+      tags:
+        - user
+      summary: Create user
+      description: This can only be done by the logged in user.
+      operationId: createUser
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '/components/schemas/index.yml#/User'
+      responses:
+        '405':
+          description: Invalid input
       security:
         - jwtToken: []
   /user/login:

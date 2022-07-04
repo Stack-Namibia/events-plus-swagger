@@ -13,10 +13,10 @@
     $ref: ./user/delete.yml
   get:
     $ref: ./user/get.yml
+  patch:
+    $ref: ./user/patch.yml
   post:
     $ref: ./user/post.yml
-  put:
-    $ref: ./user/put.yml
 /user/login:
   get:
     $ref: ./user/login/get.yml
