@@ -27,6 +27,7 @@
   },
   "homepage": "https://github.com/Stack-Namibia/events-plus-swagger#readme",
   "publishConfig": {
-    "@stacktechnologies:registry": "https://npm.pkg.github.com"
+    "@stacktechnologies:registry": "https://npm.pkg.github.com",
+    "access": "public"
   }
 }
