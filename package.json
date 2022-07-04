@@ -25,5 +25,8 @@
   "bugs": {
     "url": "https://github.com/Stack-Namibia/events-plus-swagger/issues"
   },
-  "homepage": "https://github.com/Stack-Namibia/events-plus-swagger#readme"
+  "homepage": "https://github.com/Stack-Namibia/events-plus-swagger#readme",
+  "publishConfig": {
+    "@stacktechnologies:registry": "https://npm.pkg.github.com"
+  }
 }
