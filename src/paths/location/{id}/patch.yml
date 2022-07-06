@@ -1,0 +1,24 @@
+tags:
+  - Location
+summary: Updated Location
+description: This can only be done by the logged in Location.
+operationId: updateLocation
+parameters:
+  - $ref: ../../../components/parameters/pathLocationId.yml
+requestBody:
+  required: true
+  content:
+    application/json:
+      schema:
+        $ref: "../../../components/schemas/location/model.yml"
+responses:
+  200:
+    description: Location successfully updated
+    content:
+      application/json:
+        schema:
+          $ref: ../../../components/schemas/location/model.yml
+  400:
+    description: Invalid Location supplied
+  404:
+    description: Location not found

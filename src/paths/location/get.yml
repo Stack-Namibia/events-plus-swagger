@@ -1,0 +1,13 @@
+tags:
+  - Location
+description: get all Locations
+operationId: getLocations
+responses:
+  200:
+    description: successful operation
+    content:
+      application/json:
+        schema:
+          $ref: ../../components/schemas/location/response.yml
+  400:
+    description: No locations found

@@ -2,6 +2,8 @@ PathCategoryId:
   $ref: ./pathCategoryId.yml
 PathEventId:
   $ref: ./pathEventId.yml
+PathLocationId:
+  $ref: ./pathLocationId.yml
 PathUserId:
   $ref: ./pathUserId.yml
 QueryPassword:

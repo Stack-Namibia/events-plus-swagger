@@ -10,6 +10,8 @@ HostModel:
   $ref: ./host/model.yml
 LocationModel:
   $ref: ./location/model.yml
+LocationResponse:
+  $ref: ./location/response.yml
 Meta:
   $ref: ./meta.yml
 TicketModel:

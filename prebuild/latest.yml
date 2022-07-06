@@ -177,6 +177,86 @@ paths:
           description: Event not found
       security:
         - jwtToken: []
+  /location:
+    get:
+      tags:
+        - Location
+      description: get all Locations
+      operationId: getLocations
+      responses:
+        '200':
+          description: successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/LocationResponse'
+        '400':
+          description: No locations found
+      security:
+        - jwtToken: []
+    post:
+      tags:
+        - Location
+      description: add new Location
+      operationId: addLocation
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/LocationModel'
+      responses:
+        '405':
+          description: Invalid input
+      security:
+        - jwtToken: []
+  /location/{id}:
+    get:
+      tags:
+        - Location
+      description: Returns a single Location by id
+      operationId: getLocationById
+      parameters:
+        - $ref: '#/components/parameters/PathLocationId'
+      responses:
+        '200':
+          description: successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/LocationModel'
+        '400':
+          description: Invalid ID supplied
+        '404':
+          description: Location not found
+      security:
+        - jwtToken: []
+    patch:
+      tags:
+        - Location
+      summary: Updated Location
+      description: This can only be done by the logged in Location.
+      operationId: updateLocation
+      parameters:
+        - $ref: '#/components/parameters/PathLocationId'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/LocationModel'
+      responses:
+        '200':
+          description: Location successfully updated
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/LocationModel'
+        '400':
+          description: Invalid Location supplied
+        '404':
+          description: Location not found
+      security:
+        - jwtToken: []
   /user:
     delete:
       tags:
@@ -328,6 +408,13 @@ components:
         type: string
         format: uuid
         example: 6e210bfd-4673-493d-aa23-68305a718710
+    PathLocationId:
+      in: path
+      name: locationId
+      required: true
+      schema:
+        type: string
+        format: uuid
     PathUserId:
       name: userId
       in: path
@@ -514,6 +601,17 @@ components:
         country: USA
         longitude: '-122.3320708'
         latitude: '47.6062095'
+    LocationResponse:
+      type: object
+      required:
+        - data
+      properties:
+        data:
+          type: array
+          items:
+            $ref: '#/components/schemas/LocationModel'
+        meta:
+          $ref: '#/components/schemas/Meta'
     Meta:
       type: object
       properties:
