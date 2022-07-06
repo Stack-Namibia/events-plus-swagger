@@ -1,0 +1,13 @@
+tags:
+  - Category
+description: get all Categories
+operationId: getCategories
+responses:
+  200:
+    description: successful operation
+    content:
+      application/json:
+        schema:
+          $ref: ../../components/schemas/event/categoryResponse.yml
+  400:
+    description: No Categories found

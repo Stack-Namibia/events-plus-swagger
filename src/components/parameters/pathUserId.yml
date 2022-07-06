@@ -3,4 +3,5 @@ in: path
 required: true
 schema:
   type: string
+  format: uuid
   example: 6e210bfd-4673-493d-aa23-68305a718710

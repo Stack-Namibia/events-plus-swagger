@@ -3,4 +3,5 @@
   required: true
   schema:
     type: string
-    example: Herobiam/hherobiam@gmail.com
+    format: email
+    example: hherobiam@gmail.com

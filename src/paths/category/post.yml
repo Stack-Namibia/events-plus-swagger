@@ -1,0 +1,12 @@
+tags:
+  - Category
+description: add new category
+operationId: addCategory
+requestBody:
+  content:
+    application/json:
+      schema:
+        $ref: ../../components/schemas/event/category.yml
+responses:
+  405:
+    description: Invalid input 

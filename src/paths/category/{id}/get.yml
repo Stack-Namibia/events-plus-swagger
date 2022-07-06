@@ -1,0 +1,17 @@
+tags:
+  - Category
+description: Returns a single category by id
+operationId: getCategoryById
+parameters:
+  - $ref: ../../../components/parameters/pathCategoryId.yml
+responses:
+  200:
+    description: successful operation
+    content:
+      application/json:
+        schema:
+          $ref: ../../../components/schemas/event/categoryResponse.yml
+  400:
+    description: Invalid ID supplied
+  404:
+    description: category not found

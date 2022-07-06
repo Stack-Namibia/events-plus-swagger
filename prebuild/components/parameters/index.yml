@@ -1,3 +1,5 @@
+PathCategoryId:
+  $ref: ./pathCategoryId.yml
 PathEventId:
   $ref: ./pathEventId.yml
 PathUserId:
