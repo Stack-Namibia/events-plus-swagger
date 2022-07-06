@@ -1,5 +1,5 @@
 in: path
-name: categoryId
+name: id
 required: true
 schema:
   type: string

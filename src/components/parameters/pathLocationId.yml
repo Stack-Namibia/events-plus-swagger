@@ -1,5 +1,5 @@
 in: path
-name: locationId
+name: id
 required: true
 schema:
   type: string
