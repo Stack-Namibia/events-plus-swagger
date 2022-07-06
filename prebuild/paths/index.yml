@@ -1,3 +1,15 @@
+/category:
+  get:
+    $ref: ./category/get.yml
+  post:
+    $ref: ./category/post.yml
+/category/{id}:
+  delete:
+    $ref: ./category/{id}/delete.yml
+  get:
+    $ref: ./category/{id}/get.yml
+  patch:
+    $ref: ./category/{id}/patch.yml
 /event:
   get:
     $ref: ./event/get.yml

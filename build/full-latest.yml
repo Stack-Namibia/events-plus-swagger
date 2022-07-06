@@ -20,6 +20,100 @@ servers:
         default: '8080'
   - url: http://api.eventsplus.com/v1
 paths:
+  /category:
+    get:
+      tags:
+        - Category
+      description: get all Categories
+      operationId: getCategories
+      responses:
+        '200':
+          description: successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/EventCategoryResponse'
+        '400':
+          description: No Categories found
+      security:
+        - jwtToken: []
+    post:
+      tags:
+        - Category
+      description: add new category
+      operationId: addCategory
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/EventCategory'
+      responses:
+        '405':
+          description: Invalid input
+      security:
+        - jwtToken: []
+  /category/{id}:
+    delete:
+      tags:
+        - Category
+      description: Delete Category based on path parameter
+      operationId: deleteCategoryById
+      parameters:
+        - $ref: '#/components/parameters/PathCategoryId'
+      responses:
+        '400':
+          description: Invalid ID supplied
+        '404':
+          description: Category not found
+      security:
+        - jwtToken: []
+    get:
+      tags:
+        - Category
+      description: Returns a single category by id
+      operationId: getCategoryById
+      parameters:
+        - $ref: '#/components/parameters/PathCategoryId'
+      responses:
+        '200':
+          description: successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/EventCategoryResponse'
+        '400':
+          description: Invalid ID supplied
+        '404':
+          description: category not found
+      security:
+        - jwtToken: []
+    patch:
+      tags:
+        - Category
+      summary: Updated Category
+      description: This can only be done by the logged in Category.
+      operationId: updateCategory
+      parameters:
+        - $ref: '#/components/parameters/PathCategoryId'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/EventCategory'
+      responses:
+        '200':
+          description: Category successfully returned
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/EventCategoryResponse'
+        '400':
+          description: Invalid Category supplied
+        '404':
+          description: Category not found
+      security:
+        - jwtToken: []
   /event:
     get:
       tags:
@@ -253,6 +347,7 @@ paths:
           required: true
           schema:
             type: string
+            format: uuid
             example: stack@123
       responses:
         '200':
@@ -297,12 +392,22 @@ paths:
         - jwtToken: []
 components:
   parameters:
+    PathCategoryId:
+      in: path
+      name: categoryId
+      required: true
+      schema:
+        type: string
+        format: uuid
+        example: 6e210bfd-4673-493d-aa23-68305a718710
     PathEventId:
       in: path
       name: eventId
       required: true
       schema:
         type: string
+        format: uuid
+        example: 6e210bfd-4673-493d-aa23-68305a718710
     PathLocationId:
       in: path
       name: locationId
@@ -316,6 +421,7 @@ components:
       required: true
       schema:
         type: string
+        format: uuid
         example: 6e210bfd-4673-493d-aa23-68305a718710
     QueryPassword:
       in: query
@@ -323,6 +429,7 @@ components:
       required: true
       schema:
         type: string
+        format: uuid
         example: stack@123
     QueryUsername:
       in: query
@@ -330,7 +437,8 @@ components:
       required: true
       schema:
         type: string
-        example: Herobiam/hherobiam@gmail.com
+        format: email
+        example: hherobiam@gmail.com
   schemas:
     EventCategory:
       type: object
@@ -343,6 +451,17 @@ components:
       example:
         _id: 5e9f8f8f-f8f8-4f8f-8f8f-8f8f8f8f8f8f
         name: Concert
+    EventCategoryResponse:
+      type: object
+      required:
+        - data
+      properties:
+        data:
+          type: array
+          items:
+            $ref: '#/components/schemas/EventCategory'
+        meta:
+          $ref: '#/components/schemas/Meta'
     EventModel:
       type: object
       properties:

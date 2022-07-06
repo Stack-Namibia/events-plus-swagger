@@ -1,5 +1,7 @@
 EventCategory:
   $ref: ./event/category.yml
+EventCategoryResponse:
+  $ref: ./event/categoryResponse.yml
 EventModel:
   $ref: ./event/model.yml
 EventResponse:

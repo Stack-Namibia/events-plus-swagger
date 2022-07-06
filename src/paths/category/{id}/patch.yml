@@ -1,0 +1,24 @@
+tags:
+  - Category
+summary: Updated Category
+description: This can only be done by the logged in Category.
+operationId: updateCategory
+parameters:
+  - $ref: ../../../components/parameters/pathCategoryId.yml
+requestBody:
+  required: true
+  content:
+    application/json:
+      schema:
+        $ref: "../../../components/schemas/event/category.yml"
+responses:
+  200:
+    description: Category successfully returned
+    content:
+      application/json:
+        schema:
+          $ref: "../../../components/schemas/event/categoryResponse.yml"
+  400:
+    description: Invalid Category supplied
+  404:
+    description: Category not found
