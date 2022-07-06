@@ -44,7 +44,156 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '/components/schemas/index.yml#/Event'
+              type: object
+              properties:
+                _id:
+                  type: string
+                  format: uuid
+                name:
+                  type: string
+                  description: Events name
+                description:
+                  type: string
+                  description: Events description
+                host:
+                  type: array
+                  items:
+                    type: object
+                    properties:
+                      _id:
+                        type: string
+                        format: uuid
+                      name:
+                        type: string
+                      email:
+                        type: string
+                        format: email
+                      phoneNumber:
+                        type: string
+                    example:
+                      _id: 5e9f8f8f-f8f8-4f8f-8f8f-8f8f8f8f8f8f
+                      name: Seattle Coffee
+                      email: host@gmail.com
+                      phone_no: '123456789'
+                category:
+                  type: array
+                  items:
+                    type: object
+                    properties:
+                      _id:
+                        type: string
+                        format: uuid
+                      name:
+                        type: string
+                    example:
+                      _id: 5e9f8f8f-f8f8-4f8f-8f8f-8f8f8f8f8f8f
+                      name: Concert
+                eventDate:
+                  type: string
+                  format: date
+                endTime:
+                  type: string
+                location:
+                  type: object
+                  properties:
+                    _id:
+                      type: string
+                      format: uuid
+                    name:
+                      type: string
+                    address:
+                      type: string
+                    city:
+                      type: string
+                    state:
+                      type: string
+                    zip:
+                      type: string
+                    country:
+                      type: string
+                    longitude:
+                      type: string
+                    latitude:
+                      type: string
+                  example:
+                    _id: 5e9f8f8f-f8f8-4f8f-8f8f-8f8f8f8f8f8f
+                    name: Seattle Coffee
+                    address: '123456789'
+                    city: Seattle
+                    state: WA
+                    zip: '98000'
+                    country: USA
+                    longitude: '-122.3320708'
+                    latitude: '47.6062095'
+                attendance:
+                  type: integer
+                  format: int32
+                tickets:
+                  type: array
+                  items:
+                    type: object
+                    properties:
+                      _id:
+                        type: integer
+                        format: uuid
+                      type:
+                        type: string
+                        enum:
+                          - VIP
+                          - General
+                      price:
+                        type: number
+                      quantity:
+                        type: integer
+                    example:
+                      _id: 5e9f8f8f-f8f8-4f8f-8f8f-8f8f8f8f8f8f
+                      type: General Admission
+                      price: 150
+                      quantity: 100
+                images:
+                  type: array
+                  items:
+                    type: string
+                    format: uri
+              example:
+                _id: 6e210bfd-4673-493d-aa23-68305a718710
+                name: Coffee concert
+                description: Coffee concert
+                host:
+                  - _id: 5e9f8f8f-f8f8-4f8f-8f8f-8f8f8f8f8f8f
+                    name: Seattle Coffee
+                    email: host@gmail.com
+                    phone_no: '123456789'
+                category:
+                  - _id: 5e9f8f8f-f8f8-4f8f-8f8f-8f8f8f8f8f8f
+                    name: Concert
+                  - _id: 5e9f8f8f-f8f8-4f8f-8f8f-8f8f8f8f8f8f
+                    name: Coffee meetup
+                event_datetime: '2020-01-01T00:00:00.000Z'
+                end_time: '2020-01-01T00:00:00.000Z'
+                location:
+                  _id: 5e9f8f8f-f8f8-4f8f-8f8f-8f8f8f8f8f8f
+                  name: Seattle Coffee
+                  address: '123456789'
+                  city: Seattle
+                  state: WA
+                  zip: '98000'
+                  country: USA
+                  longitude: '-122.3320708'
+                  latitude: '47.6062095'
+                attendance: 150
+                tickets:
+                  - _id: 5e9f8f8f-f8f8-4f8f-8f8f-8f8f8f8f8f8f
+                    type: General Admission
+                    price: '150.00'
+                    quantity: 100
+                  - _id: 5e9f8f8f-f8f8-4f8f-8f8f-8f8f8f8f8f8f
+                    type: VIP
+                    price: '200.00'
+                    quantity: 50
+                images:
+                  - url: >-
+                      https://images.unsplash.com/photo-1518791841217-8f162f1e1131?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60
       responses:
         '405':
           description: Invalid input
@@ -76,7 +225,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '/components/schemas/index.yml#/Event'
+                $ref: '/components/schemas/index.yml#/EventModel'
         '400':
           description: Invalid ID supplied
         '404':
@@ -250,7 +399,7 @@ components:
         type: string
         example: Herobiam/hherobiam@gmail.com
   schemas:
-    EventCategory:
+    CategoryCategory:
       type: object
       properties:
         _id:
@@ -261,88 +410,7 @@ components:
       example:
         _id: 5e9f8f8f-f8f8-4f8f-8f8f-8f8f8f8f8f8f
         name: Concert
-    EventHost:
-      type: object
-      properties:
-        _id:
-          type: string
-          format: uuid
-        name:
-          type: string
-        email:
-          type: string
-          format: email
-        phoneNumber:
-          type: string
-      example:
-        _id: 5e9f8f8f-f8f8-4f8f-8f8f-8f8f8f8f8f8f
-        name: Seattle Coffee
-        email: host@gmail.com
-        phone_no: '123456789'
-    EventLocation:
-      type: object
-      properties:
-        _id:
-          type: string
-          format: uuid
-        name:
-          type: string
-        address:
-          type: string
-        city:
-          type: string
-        state:
-          type: string
-        zip:
-          type: string
-        country:
-          type: string
-        longitude:
-          type: string
-        latitude:
-          type: string
-      example:
-        _id: 5e9f8f8f-f8f8-4f8f-8f8f-8f8f8f8f8f8f
-        name: Seattle Coffee
-        address: '123456789'
-        city: Seattle
-        state: WA
-        zip: '98000'
-        country: USA
-        longitude: '-122.3320708'
-        latitude: '47.6062095'
-    EventResponse:
-      type: object
-      required:
-        - data
-      properties:
-        data:
-          type: array
-          items:
-            $ref: '/components/schemas/index.yml#/Event'
-        meta:
-          $ref: '/components/schemas/index.yml#/Meta'
-    EventTickets:
-      type: object
-      properties:
-        _id:
-          type: integer
-          format: uuid
-        type:
-          type: string
-          enum:
-            - VIP
-            - General
-        price:
-          type: number
-        quantity:
-          type: integer
-      example:
-        _id: 5e9f8f8f-f8f8-4f8f-8f8f-8f8f8f8f8f8f
-        type: General Admission
-        price: 150
-        quantity: 100
-    Event:
+    EventModel:
       type: object
       properties:
         _id:
@@ -357,25 +425,25 @@ components:
         host:
           type: array
           items:
-            $ref: '/components/schemas/index.yml#/EventHost'
+            $ref: '/components/schemas/index.yml#/HostHost'
         category:
           type: array
           items:
-            $ref: '/components/schemas/index.yml#/EventCategory'
+            $ref: '/components/schemas/index.yml#/CategoryCategory'
         eventDate:
           type: string
           format: date
         endTime:
           type: string
         location:
-          $ref: '/components/schemas/index.yml#/EventLocation'
+          $ref: '/components/schemas/index.yml#/LocationLocation'
         attendance:
           type: integer
           format: int32
         tickets:
           type: array
           items:
-            $ref: '/components/schemas/index.yml#/EventTickets'
+            $ref: '/components/schemas/index.yml#/TicketTickets'
         images:
           type: array
           items:
@@ -420,6 +488,67 @@ components:
         images:
           - url: >-
               https://images.unsplash.com/photo-1518791841217-8f162f1e1131?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60
+    EventResponse:
+      type: object
+      required:
+        - data
+      properties:
+        data:
+          type: array
+          items:
+            $ref: '/components/schemas/index.yml#/EventModel'
+        meta:
+          $ref: '/components/schemas/index.yml#/Meta'
+    HostHost:
+      type: object
+      properties:
+        _id:
+          type: string
+          format: uuid
+        name:
+          type: string
+        email:
+          type: string
+          format: email
+        phoneNumber:
+          type: string
+      example:
+        _id: 5e9f8f8f-f8f8-4f8f-8f8f-8f8f8f8f8f8f
+        name: Seattle Coffee
+        email: host@gmail.com
+        phone_no: '123456789'
+    LocationLocation:
+      type: object
+      properties:
+        _id:
+          type: string
+          format: uuid
+        name:
+          type: string
+        address:
+          type: string
+        city:
+          type: string
+        state:
+          type: string
+        zip:
+          type: string
+        country:
+          type: string
+        longitude:
+          type: string
+        latitude:
+          type: string
+      example:
+        _id: 5e9f8f8f-f8f8-4f8f-8f8f-8f8f8f8f8f8f
+        name: Seattle Coffee
+        address: '123456789'
+        city: Seattle
+        state: WA
+        zip: '98000'
+        country: USA
+        longitude: '-122.3320708'
+        latitude: '47.6062095'
     Meta:
       type: object
       properties:
@@ -435,6 +564,26 @@ components:
         orderedBy:
           type: string
       additionalProperties: true
+    TicketTickets:
+      type: object
+      properties:
+        _id:
+          type: integer
+          format: uuid
+        type:
+          type: string
+          enum:
+            - VIP
+            - General
+        price:
+          type: number
+        quantity:
+          type: integer
+      example:
+        _id: 5e9f8f8f-f8f8-4f8f-8f8f-8f8f8f8f8f8f
+        type: General Admission
+        price: 150
+        quantity: 100
     User:
       type: object
       properties:
@@ -461,7 +610,7 @@ components:
         auth_token:
           type: string
         favorites:
-          $ref: '/components/schemas/index.yml#/Event'
+          $ref: '/components/schemas/index.yml#/EventModel'
       example:
         _id: 6e210bfd-4673-493d-aa23-68305a718710
         first_name: Kathryn

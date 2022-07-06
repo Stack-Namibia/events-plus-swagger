@@ -23,7 +23,7 @@ properties:
   auth_token:
     type: string
   favorites:
-    $ref: ./event.yml
+    $ref: ./event/model.yml
 example:
   _id: 6e210bfd-4673-493d-aa23-68305a718710
   first_name: Kathryn

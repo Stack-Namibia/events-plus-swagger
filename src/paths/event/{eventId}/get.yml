@@ -10,7 +10,7 @@ responses:
     content:
       application/json:
         schema:
-          $ref: ../../../components/schemas/event.yml
+          $ref: ../../../components/schemas/event/model.yml
   400:
     description: Invalid ID supplied
   404:
