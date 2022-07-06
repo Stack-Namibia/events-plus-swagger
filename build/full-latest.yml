@@ -477,7 +477,7 @@ components:
         format: uuid
         example: 6e210bfd-4673-493d-aa23-68305a718710
     PathUserId:
-      name: userId
+      name: id
       in: path
       required: true
       schema:
