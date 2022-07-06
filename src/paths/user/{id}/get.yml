@@ -1,16 +1,16 @@
 tags:
   - User
-description: Get user by name
-operationId: getUserByName
+description: Get user by id
+operationId: getUserById
 parameters:
-- $ref: ../../../components/parameters/pathUserName.yml
+- $ref: ../../../components/parameters/pathUserId.yml
 responses:
   200:
     description: successful operation
     content:
       application/json:
         schema:
-          $ref: ../../../components/schemas/user.yml
+          $ref: ../../../components/schemas/user/model.yml
   400:
     description: Invalid username supplied
   404:

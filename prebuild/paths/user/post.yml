@@ -7,7 +7,7 @@ requestBody:
   content:
     application/json:
       schema:
-        $ref: ../../components/schemas/user.yml
+        $ref: ../../components/schemas/user/model.yml
 responses:
   '405':
     description: Invalid input

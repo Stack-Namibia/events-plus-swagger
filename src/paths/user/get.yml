@@ -9,6 +9,6 @@ responses:
     content:
       application/json:
         schema:
-          $ref: ../../components/schemas/user.yml
+          $ref: ../../components/schemas/user/model.yml
   400:
     description: No users found

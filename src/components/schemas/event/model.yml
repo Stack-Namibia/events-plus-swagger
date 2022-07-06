@@ -12,25 +12,25 @@ properties:
   host:
     type: array
     items:
-      $ref: ../host/host.yml
+      $ref: ../host/model.yml
   category:
     type: array
     items:
-      $ref: ../category/category.yml
+      $ref: ../event/category.yml
   eventDate:
     type: string
     format: date
   endTime:
     type: string
   location:
-    $ref: ../location/location.yml
+    $ref: ../location/model.yml
   attendance:
     type: integer
     format: int32
   tickets:
     type: array
     items:
-      $ref: ../ticket/tickets.yml
+      $ref: ../ticket/model.yml
   images:
     type: array
     items:

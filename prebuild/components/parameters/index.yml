@@ -1,7 +1,7 @@
 PathEventId:
   $ref: ./pathEventId.yml
-PathUserName:
-  $ref: ./pathUserName.yml
+PathUserId:
+  $ref: ./pathUserId.yml
 QueryPassword:
   $ref: ./queryPassword.yml
 QueryUsername:

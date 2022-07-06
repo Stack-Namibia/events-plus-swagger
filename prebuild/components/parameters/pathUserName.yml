@@ -1,6 +1,0 @@
-name: userName
-in: path
-required: true
-schema:
-  type: string
-  example: Herobiam

@@ -23,7 +23,7 @@
 /user/logout:
   get:
     $ref: ./user/logout/get.yml
-/user/{userName}:
+/user/{id}:
   get:
-    $ref: ./user/{userName}/get.yml
+    $ref: ./user/{id}/get.yml
 

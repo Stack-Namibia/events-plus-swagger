@@ -1,12 +1,13 @@
 type: object
 properties:
   _id:
-    type: integer
+    type: string
     format: uuid
   type:
     type: string
     enum:
       - VIP
+      - VVIP
       - General
   price:
     type: number
