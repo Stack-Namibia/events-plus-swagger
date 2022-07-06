@@ -6,7 +6,7 @@ requestBody:
   content:
     application/json:
       schema:
-        $ref: ../../components/schemas/event.yml
+        $ref: ../../components/schemas/event/model.yml
 responses:
   405:
     description: Invalid input 

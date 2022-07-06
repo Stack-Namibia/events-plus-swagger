@@ -9,7 +9,7 @@
     "buildSpec": "boats -x --yes -i ./src/index.yml -o ./build/latest.yml && boats -x --yes -i ./src/index.yml -o ./prebuild/latest.yml",
     "buildPublic": "boats -x --yes -i ./prebuild/index.yml -o ./build/latest.json",
     "buildFullSpec": "boats -x --yes -i ./prebuild/index.yml -o ./build/full-latest.yml",
-    "build": "yarn buildSpec && yarn buildPublic && yarn buildFullSpec"
+    "build": "npm run buildSpec && npm run buildPublic && npm run buildFullSpec"
   },
   "keywords": [],
   "author": "stack technologies",
