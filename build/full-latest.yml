@@ -257,6 +257,59 @@ paths:
           description: Location not found
       security:
         - jwtToken: []
+  /ticket:
+    get:
+      tags:
+        - Ticket
+      description: get all Tickets
+      operationId: getTickets
+      responses:
+        '200':
+          description: successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/TicketResponse'
+        '400':
+          description: No Tickets found
+      security:
+        - jwtToken: []
+    post:
+      tags:
+        - Ticket
+      description: add new Ticket
+      operationId: addTicket
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/TicketModel'
+      responses:
+        '405':
+          description: Invalid input
+      security:
+        - jwtToken: []
+  /ticket/{id}:
+    get:
+      tags:
+        - Ticket
+      description: Returns a single Ticket by id
+      operationId: getTicketById
+      parameters:
+        - $ref: '#/components/parameters/PathTicketId'
+      responses:
+        '200':
+          description: successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/TicketResponse'
+        '400':
+          description: Invalid ID supplied
+        '404':
+          description: Ticket not found
+      security:
+        - jwtToken: []
   /user:
     delete:
       tags:
@@ -415,6 +468,14 @@ components:
       schema:
         type: string
         format: uuid
+    PathTicketId:
+      in: path
+      name: ticketId
+      required: true
+      schema:
+        type: string
+        format: uuid
+        example: 6e210bfd-4673-493d-aa23-68305a718710
     PathUserId:
       name: userId
       in: path
@@ -648,6 +709,17 @@ components:
         type: General Admission
         price: 150
         quantity: 100
+    TicketResponse:
+      type: object
+      required:
+        - data
+      properties:
+        data:
+          type: array
+          items:
+            $ref: '#/components/schemas/TicketModel'
+        meta:
+          $ref: '#/components/schemas/Meta'
     UserModel:
       type: object
       properties:

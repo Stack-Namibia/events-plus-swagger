@@ -1,0 +1,12 @@
+tags:
+  - Ticket
+description: add new Ticket
+operationId: addTicket
+requestBody:
+  content:
+    application/json:
+      schema:
+        $ref: ../../components/schemas/ticket/model.yml
+responses:
+  405:
+    description: Invalid input 
