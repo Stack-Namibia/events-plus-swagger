@@ -1,7 +1,0 @@
-  in: query
-  name: username
-  required: true
-  schema:
-    type: string
-    format: email
-    example: hherobiam@gmail.com

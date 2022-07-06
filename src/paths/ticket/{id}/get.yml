@@ -1,0 +1,17 @@
+tags:
+  - Ticket
+description: Returns a single Ticket by id
+operationId: getTicketById
+parameters:
+  - $ref: ../../../components/parameters/pathTicketId.yml
+responses:
+  200:
+    description: successful operation
+    content:
+      application/json:
+        schema:
+          $ref: ../../../components/schemas/ticket/response.yml
+  400:
+    description: Invalid ID supplied
+  404:
+    description: Ticket not found

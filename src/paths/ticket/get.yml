@@ -1,0 +1,13 @@
+tags:
+  - Ticket
+description: get all Tickets
+operationId: getTickets
+responses:
+  200:
+    description: successful operation
+    content:
+      application/json:
+        schema:
+          $ref: ../../components/schemas/ticket/response.yml
+  400:
+    description: No Tickets found

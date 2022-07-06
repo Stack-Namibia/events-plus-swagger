@@ -1,5 +1,5 @@
 in: path
-name: eventId
+name: ticketId
 required: true
 schema:
   type: string
