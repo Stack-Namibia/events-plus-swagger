@@ -5,6 +5,6 @@ properties:
   data:
     type: array
     items:
-      $ref: ../event.yml
+      $ref: ./model.yml
   meta:
     $ref: ../meta.yml

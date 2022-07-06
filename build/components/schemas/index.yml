@@ -1,17 +1,17 @@
-EventCategory:
-  $ref: ./event/category.yml
-EventHost:
-  $ref: ./event/host.yml
-EventLocation:
-  $ref: ./event/location.yml
+CategoryCategory:
+  $ref: ./category/category.yml
+EventModel:
+  $ref: ./event/model.yml
 EventResponse:
   $ref: ./event/response.yml
-EventTickets:
-  $ref: ./event/tickets.yml
-Event:
-  $ref: ./event.yml
+HostHost:
+  $ref: ./host/host.yml
+LocationLocation:
+  $ref: ./location/location.yml
 Meta:
   $ref: ./meta.yml
+TicketTickets:
+  $ref: ./ticket/tickets.yml
 User:
   $ref: ./user.yml
 
