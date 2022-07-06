@@ -8,6 +8,16 @@
     $ref: ./event/{eventId}/delete.yml
   get:
     $ref: ./event/{eventId}/get.yml
+/location:
+  get:
+    $ref: ./location/get.yml
+  post:
+    $ref: ./location/post.yml
+/location/{id}:
+  get:
+    $ref: ./location/{id}/get.yml
+  patch:
+    $ref: ./location/{id}/patch.yml
 /user:
   delete:
     $ref: ./user/delete.yml

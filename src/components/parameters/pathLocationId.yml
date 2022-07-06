@@ -1,0 +1,6 @@
+in: path
+name: locationId
+required: true
+schema:
+  type: string
+  format: uuid

@@ -1,0 +1,12 @@
+tags:
+  - Location
+description: add new Location
+operationId: addLocation
+requestBody:
+  content:
+    application/json:
+      schema:
+        $ref: ../../components/schemas/location/model.yml
+responses:
+  405:
+    description: Invalid input 
