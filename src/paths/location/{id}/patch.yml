@@ -18,7 +18,13 @@ responses:
       application/json:
         schema:
           $ref: ../../../components/schemas/location/model.yml
-  400:
-    description: Invalid Location supplied
+  401:
+    description: User not authenticated
+  403:
+    description: User not authorized
   404:
-    description: Location not found
+    description: Not found
+  422:
+    description: Input validation failed
+  500:
+    description: Internal server error or unknown error
