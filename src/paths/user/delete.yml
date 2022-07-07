@@ -6,7 +6,13 @@ operationId: deleteUser
 parameters:
   - $ref: ../../components/parameters/pathUserId.yml
 responses:
-  400:
-    description: Invalid username supplied
+  201:
+    description: User successfully deleted
+  401:
+    description: User not authenticated
+  403:
+    description: User not authorized
   404:
     description: User not found
+  500:
+    description: Internal server error or unknown error

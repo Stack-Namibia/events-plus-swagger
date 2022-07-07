@@ -9,6 +9,12 @@ responses:
     content:
       application/json:
         schema:
-          $ref: ../../components/schemas/user/model.yml
-  400:
-    description: No users found
+          $ref: ../../components/schemas/user/response.yml
+  401:
+    description: User not authenticated
+  403:
+    description: User not authorized
+  404:
+    description: User not found
+  500:
+    description: Internal server error or unknown error

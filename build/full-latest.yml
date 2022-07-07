@@ -320,10 +320,18 @@ paths:
       parameters:
         - $ref: '#/components/parameters/PathUserId'
       responses:
-        '400':
-          description: Invalid username supplied
+        '201':
+          description: User successfully deleted
+        '401':
+          description: User not authenticated
+        '403':
+          description: User not authorized
         '404':
-          description: User not found
+          description: Not found
+        '422':
+          description: Input validation failed
+        '500':
+          description: Internal server error or unknown error
       security:
         - jwtToken: []
     get:
@@ -338,9 +346,15 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/UserModel'
-        '400':
-          description: No users found
+                $ref: '#/components/schemas/UserResponse'
+        '401':
+          description: User not authenticated
+        '403':
+          description: User not authorized
+        '404':
+          description: Not found
+        '500':
+          description: Internal server error or unknown error
       security:
         - jwtToken: []
     patch:
@@ -364,10 +378,16 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/UserModel'
-        '400':
-          description: Invalid user supplied
+        '401':
+          description: User not authenticated
+        '403':
+          description: User not authorized
         '404':
-          description: User not found
+          description: Not found
+        '422':
+          description: Input validation failed
+        '500':
+          description: Internal server error or unknown error
       security:
         - jwtToken: []
     post:
@@ -382,8 +402,16 @@ paths:
             schema:
               $ref: '#/components/schemas/UserModel'
       responses:
-        '405':
-          description: Invalid input
+        '200':
+          description: User successfully created
+        '401':
+          description: User not authenticated
+        '403':
+          description: User not authorized
+        '422':
+          description: Input validation failed
+        '500':
+          description: Internal server error or unknown error
       security:
         - jwtToken: []
   /user/login:
@@ -437,10 +465,14 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/UserModel'
-        '400':
-          description: Invalid username supplied
+        '401':
+          description: User not authenticated
+        '403':
+          description: User not authorized
         '404':
-          description: User not found
+          description: Not found
+        '500':
+          description: Internal server error or unknown error
       security:
         - jwtToken: []
 components:
@@ -760,6 +792,17 @@ components:
           adsjfdsoahdsfoiuahrnlvihbsaouybvclkhsabdcuyvcgqsoflurbgourygrwbekuiybvfkjhbkueyg
         favorites:
           - _id: 5e210bfd-4673-493d-aa23-68305a718710
+    UserResponse:
+      type: object
+      required:
+        - data
+      properties:
+        data:
+          type: array
+          items:
+            $ref: '#/components/schemas/UserModel'
+        meta:
+          $ref: '#/components/schemas/Meta'
   securitySchemes:
     jwtToken:
       type: http
