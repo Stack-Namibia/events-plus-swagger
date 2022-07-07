@@ -8,5 +8,11 @@ requestBody:
       schema:
         $ref: ../../components/schemas/location/model.yml
 responses:
-  405:
-    description: Invalid input 
+  401:
+    description: User not authenticated
+  403:
+    description: User not authorized
+  422:
+    description: Input validation failed
+  500:
+    description: Internal server error or unknown error

@@ -9,5 +9,11 @@ responses:
       application/json:
         schema:
           $ref: ../../components/schemas/location/response.yml
-  400:
-    description: No locations found
+  401:
+    description: User not authenticated
+  403:
+    description: User not authorized
+  404:
+    description: Location not found
+  500:
+    description: Internal server error or unknown error
