@@ -9,5 +9,7 @@ responses:
       application/json:
         schema:
           $ref: ../../components/schemas/event/response.yml
-  400:
-    description: No events found
+  404:
+    description: Event not found
+  500:
+    description: Internal server error or unknown error
