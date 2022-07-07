@@ -7,3 +7,11 @@ parameters:
 responses:
   201:
     description: Category successfully deleted
+  401:
+    description: User not authenticated
+  403:
+    description: User not authorized
+  404:
+    description: Category not found
+  500:
+    description: Internal server error or unknown error
