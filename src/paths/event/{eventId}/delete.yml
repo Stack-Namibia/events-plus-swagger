@@ -7,6 +7,10 @@ parameters:
 responses:
   201:
     description: Event successfully deleted
+  401:
+    description: User not authenticated
+  403:
+    description: User not authorized
   400:
     description: Invalid ID supplied
   404:
