@@ -5,6 +5,8 @@ operationId: deleteEventById
 parameters:
   - $ref: ../../../components/parameters/pathEventId.yml
 responses:
+  201:
+    description: Event successfully deleted
   400:
     description: Invalid ID supplied
   404:

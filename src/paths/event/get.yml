@@ -9,5 +9,11 @@ responses:
       application/json:
         schema:
           $ref: ../../components/schemas/event/response.yml
-  400:
-    description: No events found
+  401:
+    description: User not authenticated
+  403:
+    description: User not authorized
+  404:
+    description: Not found
+  500:
+    description: Internal server error or unknown error
