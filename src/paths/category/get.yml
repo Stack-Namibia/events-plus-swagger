@@ -9,5 +9,11 @@ responses:
       application/json:
         schema:
           $ref: ../../components/schemas/event/categoryResponse.yml
-  400:
-    description: No Categories found
+  401:
+    description: User not authenticated
+  403:
+    description: User not authorized
+  404:
+    description: Category not found
+  500:
+    description: Internal server error or unknown error
