@@ -3,9 +3,7 @@ tags:
 description: Delete Category based on path parameter
 operationId: deleteCategoryById
 parameters:
-  - $ref: ../../../components/parameters/pathCategoryId.yml
+  - $ref: "../../../components/parameters/pathCategoryId.yml"
 responses:
-  400:
-    description: Invalid ID supplied
-  404:
-    description: Category not found
+  201:
+    description: Category successfully deleted
