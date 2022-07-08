@@ -14,6 +14,6 @@ responses:
   403:
     description: User not authorized
   404:
-    description: Not found
+    description: Ticket not found
   500:
     description: Internal server error or unknown error
