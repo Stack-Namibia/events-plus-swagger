@@ -38,9 +38,7 @@ paths:
         '403':
           description: User not authorized
         '404':
-          description: Not found
-        '422':
-          description: Input validation failed
+          description: Category not found
         '500':
           description: Internal server error or unknown error
       security:
@@ -77,6 +75,14 @@ paths:
       responses:
         '201':
           description: Category successfully deleted
+        '401':
+          description: User not authenticated
+        '403':
+          description: User not authorized
+        '404':
+          description: Category not found
+        '500':
+          description: Internal server error or unknown error
       security:
         - jwtToken: []
     get:
@@ -98,7 +104,7 @@ paths:
         '403':
           description: User not authorized
         '404':
-          description: Not found
+          description: Category not found
         '500':
           description: Internal server error or unknown error
       security:
@@ -129,7 +135,7 @@ paths:
         '403':
           description: User not authorized
         '404':
-          description: Not found
+          description: Category not found
         '422':
           description: Input validation failed
         '500':
@@ -149,12 +155,8 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/EventResponse'
-        '401':
-          description: User not authenticated
-        '403':
-          description: User not authorized
         '404':
-          description: Not found
+          description: Event not found
         '500':
           description: Internal server error or unknown error
     post:
@@ -186,9 +188,13 @@ paths:
         - $ref: '#/components/parameters/PathEventId'
       responses:
         '201':
-          description: Trip successfully deleted
+          description: Event successfully deleted
         '400':
           description: Invalid ID supplied
+        '401':
+          description: User not authenticated
+        '403':
+          description: User not authorized
         '404':
           description: Event not found
       security:
@@ -207,12 +213,8 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/EventModel'
-        '401':
-          description: User not authenticated
-        '403':
-          description: User not authorized
         '404':
-          description: Not found
+          description: Event not found
         '500':
           description: Internal server error or unknown error
       security:
@@ -235,7 +237,7 @@ paths:
         '403':
           description: User not authorized
         '404':
-          description: Not found
+          description: Location not found
         '500':
           description: Internal server error or unknown error
       security:
@@ -281,7 +283,7 @@ paths:
         '403':
           description: User not authorized
         '404':
-          description: Not found
+          description: Location not found
         '500':
           description: Internal server error or unknown error
       security:
@@ -312,7 +314,7 @@ paths:
         '403':
           description: User not authorized
         '404':
-          description: Not found
+          description: Location not found
         '422':
           description: Input validation failed
         '500':
@@ -411,9 +413,7 @@ paths:
         '403':
           description: User not authorized
         '404':
-          description: Not found
-        '422':
-          description: Input validation failed
+          description: User not found
         '500':
           description: Internal server error or unknown error
       security:
@@ -436,7 +436,7 @@ paths:
         '403':
           description: User not authorized
         '404':
-          description: Not found
+          description: User not found
         '500':
           description: Internal server error or unknown error
       security:
@@ -467,7 +467,7 @@ paths:
         '403':
           description: User not authorized
         '404':
-          description: Not found
+          description: User not found
         '422':
           description: Input validation failed
         '500':
@@ -554,7 +554,7 @@ paths:
         '403':
           description: User not authorized
         '404':
-          description: Not found
+          description: User not found
         '500':
           description: Internal server error or unknown error
       security:
