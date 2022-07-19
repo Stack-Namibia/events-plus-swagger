@@ -1,8 +1,5 @@
 type: object
 properties:
-  _id:
-    type: string
-    readOnly: true
   first_name:
     type: string
     description: Users firstname
@@ -25,10 +22,6 @@ properties:
   profilePic:
     type: string
     description: Users profile picture url
-  firebaseToken:
-    type: string
-    nullable: true
-    example: ej.433355d332rq3gdasfdsfgsggasgsdgga34t2t63653525    
 example:
   first_name: Kathryn
   last_name: Bennett
@@ -37,7 +30,6 @@ example:
   email: example@gmail.com
   date_of_birth: '1962-01-01'
 required:
-  - id
   - first_name
   - last_name
   - email

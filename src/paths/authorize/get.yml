@@ -1,0 +1,19 @@
+tags:
+  - authorize
+summary: Login/Sign in user
+description: Exchange a firebase token with an api token
+operationId: authorize
+responses:
+  200:
+    description: User successfully authorized
+    headers:
+      X-token:
+        schema:
+          $ref: ../../components/schemas/authorize/token.yml
+    content:
+      application/json:
+        schema:
+          $ref: ../../components/schemas/authorize/model.yml
+  401:
+    description: User not authenticated
+x-passRequest: true
