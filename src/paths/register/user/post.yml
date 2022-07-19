@@ -1,0 +1,22 @@
+tags:
+  - register
+summary: Register/Sign up a user
+operationId: registerUser
+requestBody:
+  required: true
+  content:
+    application/json:
+      schema:
+        $ref: ../../../components/schemas/authorize/user/post.yml
+responses:
+  200:
+    description: User successfully registered
+    content:
+      application/json:
+        schema:
+          $ref: ../../../components/schemas/authorize/user/model.yml
+  401:
+    description: User not authenticated
+  422:
+    description: Input validation failed
+x-passRequest: true
