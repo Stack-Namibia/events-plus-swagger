@@ -746,6 +746,31 @@ components:
         name: Seattle Coffee
         email: host@gmail.com
         phone_no: '123456789'
+    JwtAccess:
+      type: object
+      required:
+        - sub
+      properties:
+        sub:
+          type: string
+        picture:
+          type: string
+        iss:
+          type: string
+        aud:
+          type: string
+        authTime:
+          type: string
+        userId:
+          type: string
+        iat:
+          type: number
+        exp:
+          type: number
+        email:
+          type: string
+        phoneNumber:
+          type: string
     LocationModel:
       type: object
       properties:
