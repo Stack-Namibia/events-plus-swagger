@@ -4,20 +4,20 @@ summary: Updated user
 description: This can only be done by the logged in user.
 operationId: updateUser
 parameters:
-  - $ref: ../../components/parameters/pathUserId.yml
+  - $ref: ../../../components/parameters/pathUserId.yml
 requestBody:
   required: true
   content:
     application/json:
       schema:
-        $ref: "../../components/schemas/user/model.yml"
+        $ref: "../../../components/schemas/user/model.yml"
 responses:
   200:
     description: User successfully returned
     content:
       application/json:
         schema:
-          $ref: ../../components/schemas/user/model.yml
+          $ref: ../../../components/schemas/user/model.yml
   401:
     description: User not authenticated
   403:

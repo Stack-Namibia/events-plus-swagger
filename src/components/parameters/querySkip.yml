@@ -1,0 +1,7 @@
+name: skip
+in: query
+description: The number of items to skip
+required: false
+schema:
+  type: integer
+example: 20

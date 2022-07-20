@@ -1,0 +1,8 @@
+name: match
+in: query
+description: >-
+  Run a match query in the fields of the items, only specific fields are allowed
+  Date values should be in the ISO format, i.e. `2017-01-01` or `2017-01-01T22:00:00`
+required: false
+schema:
+  type: string
