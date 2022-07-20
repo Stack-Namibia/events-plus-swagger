@@ -16,3 +16,5 @@ responses:
     description: Input validation failed
   500:
     description: Internal server error or unknown error
+security:
+  - jwtToken: []
