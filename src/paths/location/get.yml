@@ -2,6 +2,11 @@ tags:
   - Location
 description: get all Locations
 operationId: getLocations
+parameters:
+  - $ref: ../../components/parameters/queryLimit.yml
+  - $ref: ../../components/parameters/querySkip.yml
+  - $ref: ../../components/parameters/queryMatch.yml
+  - $ref: ../../components/parameters/querySort.yml
 responses:
   200:
     description: successful operation
