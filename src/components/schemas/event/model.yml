@@ -19,7 +19,6 @@ properties:
       $ref: ../event/category.yml
   eventDate:
     type: string
-    format: date
   endTime:
     type: string
   location:
