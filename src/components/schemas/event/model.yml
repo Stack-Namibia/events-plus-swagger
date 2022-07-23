@@ -41,19 +41,19 @@ example:
   name: Coffee concert
   description: Coffee concert
   host:
-    - _id: 5e9f8f8f-f8f8-4f8f-8f8f-8f8f8f8f8f8f
+    - _id: '5e9f8f8f-f8f8-4f8f-8f8f-8f8f8f8f8f8f'
       name: Seattle Coffee
       email: host@gmail.com
       phone_no: '123456789'
   category:
-    - _id: 5e9f8f8f-f8f8-4f8f-8f8f-8f8f8f8f8f8f
+    - _id: '5e9f8f8f-f8f8-4f8f-8f8f-8f8f8f8f8f8f'
       name: Concert
-    - _id: 5e9f8f8f-f8f8-4f8f-8f8f-8f8f8f8f8f8f
+    - _id: '5e9f8f8f-f8f8-4f8f-8f8f-8f8f8f8f8f8f'
       name: Coffee meetup
-  event_datetime: '2020-01-01T00:00:00.000Z'
-  end_time: '2020-01-01T00:00:00.000Z'
+  eventDate: '2020-01-01T00:00:00.000Z'
+  endTime: '2020-01-01T00:00:00.000Z'
   location:
-    _id: 5e9f8f8f-f8f8-4f8f-8f8f-8f8f8f8f8f8f
+    _id: '5e9f8f8f-f8f8-4f8f-8f8f-8f8f8f8f8f8f'
     name: Seattle Coffee
     address: '123456789'
     city: Seattle
@@ -64,14 +64,13 @@ example:
     latitude: '47.6062095'
   attendance: 150
   tickets:
-    - _id: 5e9f8f8f-f8f8-4f8f-8f8f-8f8f8f8f8f8f
-      type: General Admission
-      price: '150.00'
+    - _id: '5e9f8f8f-f8f8-4f8f-8f8f-8f8f8f8f8f8f'
+      type: 'General'
+      price: 150
       quantity: 100
-    - _id: 5e9f8f8f-f8f8-4f8f-8f8f-8f8f8f8f8f8f
-      type: VIP
-      price: '200.00'
+    - _id: '5e9f8f8f-f8f8-4f8f-8f8f-8f8f8f8f8f8f'
+      type: 'VIP'
+      price: 200
       quantity: 50
   images:
-    - url: >-
-        https://images.unsplash.com/photo-1518791841217-8f162f1e1131?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60
+    - 'https://images.unsplash.com/photo-1518791841217-8f162f1e1131?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60'

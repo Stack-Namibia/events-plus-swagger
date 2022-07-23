@@ -803,8 +803,8 @@ components:
             name: Concert
           - _id: 5e9f8f8f-f8f8-4f8f-8f8f-8f8f8f8f8f8f
             name: Coffee meetup
-        event_datetime: '2020-01-01T00:00:00.000Z'
-        end_time: '2020-01-01T00:00:00.000Z'
+        eventDate: '2020-01-01T00:00:00.000Z'
+        endTime: '2020-01-01T00:00:00.000Z'
         location:
           _id: 5e9f8f8f-f8f8-4f8f-8f8f-8f8f8f8f8f8f
           name: Seattle Coffee
@@ -818,16 +818,16 @@ components:
         attendance: 150
         tickets:
           - _id: 5e9f8f8f-f8f8-4f8f-8f8f-8f8f8f8f8f8f
-            type: General Admission
-            price: '150.00'
+            type: General
+            price: 150
             quantity: 100
           - _id: 5e9f8f8f-f8f8-4f8f-8f8f-8f8f8f8f8f8f
             type: VIP
-            price: '200.00'
+            price: 200
             quantity: 50
         images:
-          - url: >-
-              https://images.unsplash.com/photo-1518791841217-8f162f1e1131?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60
+          - >-
+            https://images.unsplash.com/photo-1518791841217-8f162f1e1131?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60
     EventResponse:
       type: object
       required:
@@ -958,7 +958,7 @@ components:
           type: integer
       example:
         _id: 5e9f8f8f-f8f8-4f8f-8f8f-8f8f8f8f8f8f
-        type: General Admission
+        type: General
         price: 150
         quantity: 100
     TicketResponse:
@@ -1010,14 +1010,17 @@ components:
         firebaseToken:
           type: string
           nullable: true
-          example: ej.433355d332rq3gdasfdsfgsggasgsdgga34t2t63653525
+          example: 'ej.433355d332rq3gdasfdsfgsggasgsdgga34t2t63653525  '
       example:
+        _id: 6e210bfd4673493daa2368305a718710
         first_name: Kathryn
         last_name: Bennett
-        mobile: 264816639110
+        mobile: '264816639110'
         gender: male
         email: example@gmail.com
         date_of_birth: '1962-01-01'
+        profilePic: https://firebasestorage.googleapis.com/v0/b/project/o/20-5-2016.png
+        firebaseToken: ej.433355d332rq3gdasfdsfgsggasgsdgga34t2t63653525
       required:
         - id
         - first_name
