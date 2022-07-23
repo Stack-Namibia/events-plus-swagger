@@ -101,7 +101,7 @@ paths:
       parameters:
         - $ref: '#/components/parameters/PathCategoryId'
       responses:
-        '201':
+        '200':
           description: Category successfully deleted
         '401':
           description: User not authenticated
@@ -222,7 +222,7 @@ paths:
       parameters:
         - $ref: '#/components/parameters/PathEventId'
       responses:
-        '201':
+        '200':
           description: Event successfully deleted
         '400':
           description: Invalid ID supplied
@@ -372,7 +372,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/AuthorizeUserPost'
+              $ref: '#/components/schemas/AuthorizeUserModel'
       responses:
         '200':
           description: User successfully registered
@@ -530,7 +530,7 @@ paths:
       parameters:
         - $ref: '#/components/parameters/PathUserId'
       responses:
-        '201':
+        '200':
           description: User successfully deleted
         '401':
           description: User not authenticated
