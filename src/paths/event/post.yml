@@ -8,6 +8,12 @@ requestBody:
       schema:
         $ref: ../../components/schemas/event/model.yml
 responses:
+  200:
+    description: Event successfully created
+    content:
+      application/json:
+        schema:
+          $ref: ../../components/schemas/event/model.yml
   401:
     description: User not authenticated
   403:
