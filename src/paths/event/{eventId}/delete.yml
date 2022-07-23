@@ -5,7 +5,7 @@ operationId: deleteEventById
 parameters:
   - $ref: ../../../components/parameters/pathEventId.yml
 responses:
-  201:
+  200:
     description: Event successfully deleted
   401:
     description: User not authenticated

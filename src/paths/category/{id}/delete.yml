@@ -5,7 +5,7 @@ operationId: deleteCategoryById
 parameters:
   - $ref: "../../../components/parameters/pathCategoryId.yml"
 responses:
-  201:
+  200:
     description: Category successfully deleted
   401:
     description: User not authenticated
