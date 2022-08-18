@@ -39,6 +39,12 @@ components:
       },
       excludePaths: [
         '/event'
+        '/location'
+        '/user'
+        '/category'
+        '/register'
+        '/ticket'
+        '/swagger'
       ]
       }
     }
